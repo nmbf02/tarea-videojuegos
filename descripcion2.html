@@ -1,1 +1,145 @@
-"<!DOCTYPE html><html><head><title>Historia de los Videojuegos</title></head><body><h1>Historia de los videojuegos</h1><p>Los videojuegos nacieron en la d�cada de 1950 como experimentos tecnol�gicos y hoy representan una de las industrias m�s grandes del entretenimiento mundial.</p></body></html>" 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historia de los Videojuegos</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(to right, #fffaf0, #f0f4ff);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 30px;
+      font-size: 2.5em;
+      background: linear-gradient(to right, #ffa07a, #ff6f91);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .slide h2 {
+      color: #ff6f91;
+      margin-top: 0;
+    }
+
+    .slide p {
+      text-align: justify;
+    }
+
+    .nav-buttons {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .nav-buttons button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff6f91;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #e05a79;
+    }
+  </style>
+</head>
+<body>
+  <h1>Historia de los Videojuegos</h1>
+
+  <div class="slider-container">
+    <div class="slider" id="slider">
+      <!-- 1950s -->
+      <div class="slide">
+        <h2>1950s – Los Inicios</h2>
+        <p>
+          En 1952 Alexander S. Douglas desarrolló OXO. En 1958, William Higginbotham creó "Tennis for Two", y en 1962 Steve Russell presentó "Spacewar". Estos juegos pioneros marcaron el comienzo de la interacción digital por diversión.
+        </p>
+      </div>
+
+      <!-- 1970s -->
+      <div class="slide">
+        <h2>1970–1979 – La Eclosión</h2>
+        <p>
+          Pong (1972) de Atari popularizó el entretenimiento electrónico. Nacieron juegos como Space Invaders y Asteroids. La industria emergente se benefició de nuevos chips y microprocesadores, consolidando el mercado arcade.
+        </p>
+      </div>
+
+      <!-- 1980s -->
+      <div class="slide">
+        <h2>1980–1989 – La Era de los 8 Bits</h2>
+        <p>
+          Aparecen consolas como NES, Commodore 64 y Atari 5200. Juegos icónicos como Pac-Man, Tetris y Super Mario Bros dominan el mercado. Se introduce la idea de juegos con objetivo y final. La Game Boy revoluciona la portabilidad.
+        </p>
+      </div>
+
+      <!-- 1990s -->
+      <div class="slide">
+        <h2>1990–1999 – La Revolución 3D</h2>
+        <p>
+          Consolas como PlayStation, Sega Saturn y Nintendo 64 integran gráficos 3D. Títulos como Final Fantasy VII, Resident Evil y Metal Gear Solid marcan una nueva era. El PC se afianza con shooters como Quake y juegos online como Ultima Online.
+        </p>
+      </div>
+
+      <!-- 2000s -->
+      <div class="slide">
+        <h2>Desde 2000 – El Nuevo Siglo</h2>
+        <p>
+          Sony lanza la PlayStation 2; Microsoft entra con Xbox. Nintendo apuesta por GameCube y la portátil Game Boy Advance. El PC se mantiene como plataforma flexible, con parches, mods, y compatibilidad con hardware de alto rendimiento.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="moveSlide(-1)">⬅️ Anterior</button>
+    <button onclick="moveSlide(1)">Siguiente ➡️</button>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const slider = document.getElementById('slider');
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    function moveSlide(direction) {
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = totalSlides - 1;
+      if (currentIndex >= totalSlides) currentIndex = 0;
+      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+  </script>
+</body>
+</html>
