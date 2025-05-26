@@ -1,1 +1,217 @@
-"<!DOCTYPE html><html lang='es'><head><meta charset='UTF-8'><title>Index - Videojuegos</title></head><body><h1>Nathaly Michel Berroa Fermin</h1><h2>Matr�cula: 1-20-0297</h2><p>Los videojuegos son una forma de entretenimiento digital que permite la interacci�n del usuario con un entorno virtual, mediante reglas, objetivos y experiencias inmersivas.</p></body></html>" 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Videojuegos - Nathaly Michel</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fcefee, #e4f2ff);
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    h1 {
+      text-align: center;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2.8em;
+      margin-bottom: 5px;
+      animation: pulse 2s infinite;
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: normal;
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    .highlight {
+      background: #fff3f3;
+      border-left: 5px solid #ff6f91;
+      padding: 10px 15px;
+      margin: 20px 0;
+      border-radius: 10px;
+      animation: slideIn 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    p {
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    /* Cards Flip */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: transparent;
+      width: 300px;
+      height: 320px;
+      perspective: 1000px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .card-front {
+      background: #ffeef2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      color: #d45075;
+      font-weight: bold;
+    }
+
+    .card-back {
+      background: #fff8fb;
+      color: #333;
+      transform: rotateY(180deg);
+      overflow-y: auto;
+      font-size: 0.95em;
+      line-height: 1.4;
+    }
+
+    .card-back ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .card-back li {
+      margin-bottom: 6px;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0% { text-shadow: 0 0 10px #ffb6c1; }
+      50% { text-shadow: 0 0 20px #ff6f91; }
+      100% { text-shadow: 0 0 10px #ffb6c1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @media screen and (max-width: 768px) {
+      .card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Nathaly Michel Berroa Fermin</h1>
+    <h2>Matrícula: 1-20-0297</h2>
+
+    <div class="highlight">
+      <strong>¿Qué son los videojuegos?</strong>
+      <p>
+        Los videojuegos son juegos electrónicos interactivos que involucran al usuario a través de un controlador,
+        generando retroalimentación visual en una pantalla, como un televisor o monitor. Simulan experiencias que, de
+        otra forma, no se podrían vivir, ofreciendo una forma de entretenimiento y ocio.
+      </p>
+    </div>
+
+    <div class="card-container">
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">🔹 Concepto de Videojuegos</div>
+          <div class="card-back">
+            <ul>
+              <li><strong>Interacción:</strong> Participación activa mediante controles o dispositivos.</li>
+              <li><strong>Entorno visual:</strong> Gráficos en pantalla que crean una experiencia visual.</li>
+              <li><strong>Simulación:</strong> Experiencias virtuales como juegos de rol, deportes o acertijos.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">🎮 Tipos de Videojuegos</div>
+          <div class="card-back">
+            <ul>
+              <li>Acción: Combates, persecuciones.</li>
+              <li>Aventura: Exploración, acertijos.</li>
+              <li>Estrategia: Toma de decisiones.</li>
+              <li>RPG: Personajes en mundos ficticios.</li>
+              <li>Deportes: Competencias en equipo o individuales.</li>
+              <li>Puzzle: Lógica y resolución de problemas.</li>
+              <li>Simulación: Manejo de vehículos, recursos, etc.</li>
+              <li>Musicales: Juegos con ritmo musical.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">🎯 Usos y Beneficios</div>
+          <div class="card-back">
+            <ul>
+              <li><strong>Entretenimiento:</strong> Diversión y relajación.</li>
+              <li><strong>Habilidades:</strong> Mejora atención, creatividad y memoria.</li>
+              <li><strong>Aprendizaje:</strong> Enseñanza interactiva.</li>
+              <li><strong>Conexiones sociales:</strong> Jugar con personas del mundo.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
